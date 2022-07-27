@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/disable.min.js"></script>
+
+        <title>Розрахувати зарплату у Німеччині | Розрахуйте легко свою чисту зарплату у Німеччині.</title>
+        <meta name="description" content="Легко розрахуйте свою чисту зарплату за допомогою Калькулятор зарплат у Німеччині. Дізнайтесь швидко і точно свою валову та чисту зарплату, податкові платежі та інформацію про соціальне страхування у Німеччині." />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWG3LXXSTD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-XWG3LXXSTD', { 'anonymize_ip': true, 'allow_google_signals': false, 'allow_ad_personalization_signals': false });
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet">
+        <link rel="canonical" href="https://zarplatavgermanii.com" />
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png?v=2">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png?v=2">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png?v=2">
+        <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
+        <link rel="manifest" href="site.webmanifest?v=2">
+        <!-- <link rel="mask-icon" href="images/safari-pinned-tab.svg?v=2" color="#990000"> -->
+        <link rel="shortcut icon" href="images/favicon.ico?v=2">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-TileImage" content="images/mstile-144x144.png?v=2">
+        <meta name="theme-color" content="#ffffff">
+        <!-- Favicons -->
+
+        <link rel="stylesheet" href="css/styles.min.css">
+    </head>
+    <body>
+        <header>
+            <div class = "header-container-new">
+                <div class="header-title">
+                    <a href="./" class="header-nav-link">&#127465;&#127466;  ЗАРПЛАТА В НІМЕЧЧИНІ  &#128182;</a>
+                </div>
+                <div class="header-about">
+                    <a href="./pages/hakkimda.html" class="header-about-nav-link">Про мене</a>
+                </div>
+            </div>
+        </header>
+    <main>
+        <div class = "title">
+            <div class = "title-wrapper">
+                <div>
+                    <h1>
+                        Розрахуйте легко свою щомісячну зарплату за допомогою "Калькулятора зарплат у Німеччині".<br class="mobile-break">
+                    </h1>
+                    <p>Детально переглядайте свої виплати із соціального страхування та податкові статті.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="calculator-container">
+            <div class="calculator-container-wrapper">
+                <div class="rendered-form calculator-form">
+                    <div class="calculator-form-item-wrapper formbuilder-text form-group">
+                        <div class="tooltip-line"><label id="labelSalary" for="inputSalary" class="calculator-form-item-label form-label formbuilder-text-label">Валова Заробітна плата (€)</label> <i id="iconSalary" class="bi bi-info-circle tooltip-line-icon"></i></div>
+                        <input id="inputSalary" class="form-control calculator-form-item-text" inputmode="numeric" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" min="1" max="1000000000">
+                        <small class="calculator-form-item-invalid-text" id="textSalaryInvalid">Lütfen geçerli bir brüt maaş giriniz.</small>
+
+                    </div>
+
+                    <div class="calculator-form-item-wrapper form-group">
+                        <div class="tooltip-line"><label for="accountPeriodRadioGroup" class="calculator-form-item-label form-label">Звітний період</label><i id="iconAccountPeriod" class="bi bi-info-circle tooltip-line-icon"></i></div>
+                        <div id="accountPeriodRadioGroup" class="calculator-form-item-radio-group radio-group">
+                            <div class="calculator-form-item-radio">
+                                <input name="inputAccountPeriod" id="accountPeriodRadioOption0" value="1" type="radio">
+                                <label for="accountPeriodRadioOption0">Щомісяця</label>
+                            </div>
+                            <div class="calculator-form-item-radio">
+                                <input name="inputAccountPeriod" id="accountPeriodRadioOption1" checked="checked" value="2" type="radio">
+                                <label for="accountPeriodRadioOption1">Щорічно</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="calculator-form-item-wrapper">
+                        <label for="radio122" class="calculator-form-item-label formbuilder-radio-group-label">Hesap Dönemi</label>
+                        <ul class="calculator-form-item-radio-group" name="radio122">
+                            <li><input type="radio" id="radio1" type="radio" name="radio1"><label for="radio1">Aylık</label></li>
+                            <li><input type="radio" id="radio2" type="radio" name="radio2"><label for="radio2">Yıllık</label></li>
+                        </ul>
+                    </div>
+                    -->
+
+                    <div class="calculator-form-item-wrapper  formbuilder-text form-group">
+                        <div class="tooltip-line"><label for="selectAccountYear" class="calculator-form-item-label form-label formbuilder-text-label">Звітній рік</label><i id="iconAccountYear" class="bi bi-info-circle tooltip-line-icon"></i></div>
+                        <select class="form-select form-control calculator-form-item-select-year" id="selectAccountYear">
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022" selected="true">2022</option>
+                        </select>
+                    </div>
+                    <div class="calculator-form-item-wrapper formbuilder-text form-group">
+                        <div class="tooltip-line"><label id="labelTaxFree" for="inputTaxFree" class="calculator-form-item-label form-label">Безподатковий Посібник (€)</label><i id="iconTaxFree" class="bi bi-info-circle tooltip-line-icon"></i></div>
+                        <input id="inputTaxFree" inputmode="numeric" type="number" value="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control calculator-form-item-text">
+                        <small class="calculator-form-item-invalid-text" id="textTaxFreeInvalid">Lütfen geçerli ödenek değeri giriniz. Eğer vergisiz ödeneğiniz yok ise 0 girebilirsiniz.</small>
+                    </div>
+                    <div class="calculator-form-item-wrapper fcalculator-form-item-wrapper form-group">
+                        <div class="tooltip-line"><label for="selectTaxClass" class="calculator-form-item-label form-label formbuilder-select-label">Податковий клас</label><i id="iconTaxClass" class="bi bi-info-circle tooltip-line-icon"></i></div>
+                        <select class="form-select form-control calculator-form-item-select" id="selectTaxClass">
+                            <option value="1" selected="true">Податковий клас I</option>
+                            <option value="2">Податковий клас II</option>
+                            <option value="3">Податковий клас III</option>
+                            <option value="4">Податковий клас IV</option>
+                            <option value="5">Податковий клас V</option>
+                            <option value="6">Податковий клас VI</option>
+                        </select>
+                    </div>
+                    <div class="calculator-form-item-wrapper form-group">
+                        <div class="tooltip-line"><label for="churchTaxRadioGroup" class="calculator-form-item-label formbuilder-radio-group-label">Церковний Податок</label><i id="iconChurchTax" class="bi bi-info-circle tooltip-line-icon"></i></div>
+                        <div id="churchTaxRadioGroup" class="calculator-form-item-radio-group radio-group">
+                            <div class="formbuilder-radio">
+                                <input name="inputChurchTax" id="churchTaxRadioOption0" value="J" type="radio">
+                                <label for="churchTaxRadioOption0">Evet</label>
+                            </div>
+                            <div class="formbuilder-radio">
+                                <input name="inputChurchTax"  id="churchTaxRadioOption1" checked="checked" value="N" type="radio">
+                                <label for="churchTaxRadioOption1">Hayır</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator-form-item-wrapper formbuilder-select form-group">
+                        <div class="tooltip-line"><label for="selectState" class="calculator-form-item-label formbuilder-select-label">Штат</label><i id="iconState" class="bi bi-info-circle tooltip-line-icon"></i></div>
+                        <select class="form-control calculator-form-item-select" id="selectState">
+                            <option value="BW" selected="true">Baden-Württemberg</option>
+                            <option value="BY">Bayern</option>
+                            <option value="BE">Berlin</option>
+                            <option value="BB">Brandenburg</option>
+                            <option value="HB">Bremen</option>
+                            <option value="HH">Hamburg</option>
+                            <option value="HE">Hessen</option>
+                            <option value="MV">Mecklenburg-Vorpommern</option>
+                            <option value="NI">Niedersachsen</option>
+                            <option value="NW">Nordrhein-Westfalen</option>
+                            <option value="RP">Rheinland-Pfalz</option>
+                            <option value="SL">Saarland</option>
+                            <option value="SN">Sachsen</option>
+                            <option value="ST">Sachsen-Anhalt</option>
+                            <option value="SH">Schleswig-Holstein</option>
+                            <option value="TH">Thüringen</option>
+                        </select>
+                    </div>
+                    <!--
+                    <div class="calculator-form-item-wrapper form-group">
+                        <label id="labelAge" for="inputAge" class="form-label">Yaş</label>
+                        <input id="inputAge" type="text" max="75" min="15" class="form-text form-control calculator-form-item-text-age" min="15" max="75">
+                        <small id="textAgeInvalid" class="calculator-form-item-invalid-text">Lütfen geçerli bir yaş değeri giriniz.</small>
+                        <small id="textAgeRangeInvalid" class="calculator-form-item-invalid-text">Yaş değeri 15 ve 75 arasında olmalıdır.</small>
+                    </div>
+                    -->
+                    <div class="calculator-form-item-wrapper form-group">
+                        <div class="tooltip-line"><label for="childrenRadioGroup" class="calculator-form-item-label">У вас є діти?</label><i id="iconChildren" class="bi bi-info-circle tooltip-line-icon"></i></div>
+                        <div id="childrenRadioGroup" class="calculator-form-item-radio-group radio-group">
+                            <div class="calculator-form-item-radio">
+                                <input name="inputChildren" access="false" id="childrenRadioOption0" value="1" type="radio">
+                                <label for="childrenRadioOption0">Evet</label>
+                            </div>
+                            <div class="formbuilder-radio">
+                                <input name="inputChildren" access="false" id="childrenRadioOption1" checked="checked" value="2" type="radio">
+                                <label for="childrenRadioOption1">Hayır</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divNrOfChildren" class="calculator-form-item-wrapper form-group hidden">
+                        <label for="selectNrOfChildren" class="calculator-form-item-label formbuilder-select-label">Кількість дітей у податковій карті</label>
+                        <select class="form-control calculator-form-item-select-child" id="selectNrOfChildren">
+                            <option value="0" selected="true">0</option>
+                            <option value="0.5">0.5</option>
+                            <option value="1">1</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                            <option value="2.5">2.5</option>
+                            <option value="3">3</option>
+                            <option value="3.5">3.5</option>
+                            <option value="4">4</option>
+                            <option value="4.5">4.5</option>
+                            <option value="5">5</option>
+                            <option value="5.5">5.5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                    <div class="calculator-form-item-wrapper form-group">
+                        <div class="tooltip-line"><label for="selectHealthInsurance" class="calculator-form-item-label formbuilder-select-label">Медична страховка</label><i id="iconHealthInsurance" class="bi bi-info-circle tooltip-line-icon"></i></div>
+                        <select id="selectHealthInsurance" class="form-control calculator-form-item-select">
+                            <option value="1" selected="true">Обов'язкове страхування</option>
+                            <option value="2">Приватне медичне страхування</option>
+                            <!--<option value="3">Zorunlu sigorta, gönüllü olarak</option>-->
+                        </select>
+                    </div>
+                    <div id="divHealthInsuranceRate" class="calculator-form-item-wrapper form-group">
+                        <div class="tooltip-line"><label id="labelHealthInsuranceRate" for="inputHealthInsuranceRate" class="calculator-form-item-label form-label formbuilder-text-label">Внесок на медичне страхування (%)</label><i id="iconHealthInsuranceRate" class="bi bi-info-circle tooltip-line-icon"></i></div>
+                        <input id="inputHealthInsuranceRate" inputmode="decimal" type="number" value="14.6" class="form-text form-control calculator-form-item-text-percent" step=".01">
+                        <small id="textHealthInsuranceRateInvalid" class="calculator-form-item-invalid-text">Katkı payı minumum %14,6, maksimum %18 olmalıdır. Lütfen geçerli bir değer giriniz.</small>
+                    </div>
+
+                    <div id="divHealthInsuranceMonthlyFee" class="calculator-form-item-wrapper form-group hidden">
+                        <div class="tooltip-line"><label id="labelHealthInsuranceMonthlyFee" for="inputHealthInsuranceMonthlyFee" class="calculator-form-item-label form-label formbuilder-text-label">Aylık Prim (€)</label><i id="iconHealthInsuranceMonthlyFee" class="bi bi-info-circle tooltip-line-icon"></i></div>
+                        <input id="inputHealthInsuranceMonthlyFee" inputmode="numeric" type="number" value="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-text form-control calculator-form-item-text">
+                        <small id="textHealthInsuranceMonthlyFeeInvalid" class="calculator-form-item-invalid-text">Aylık prim minumum 2€, maksimum 100000€ olmalıdır. Lütfen geçerli bir değer giriniz.</small>
+                    </div>
+                    <!--
+                    <div class="calculator-form-item-wrapper">
+                        <label for="selectPension" class="calculator-form-item-label formbuilder-select-label">Emeklilik sigortası</label>
+                        <select class="form-control calculator-form-item-select" id="selectPension">
+                            <option value="1" selected="true">Zorunlu sigorta</option>
+                            <option value="2">Sigortadan muaf</option>
+                            <option value="3">Yalnızca iş veren katkısı</option>
+                            <option value="4">Yalnızca işçi payı</option>
+                        </select>
+                    </div>
+                    -->
+                    <!--
+                    <div class="calculator-form-item-wrapper">
+                        <label for="selectUnemployment" class="calculator-form-item-label formbuilder-select-label">İşsizlik Sigortası</label>
+                        <select class="form-control calculator-form-item-select" id="selectUnemployment">
+                            <option value="1" selected="true">Zorunlu sigorta</option>
+                            <option value="2">Sigortadan muaf</option>
+                            <option value="3">Yalnızca iş veren katkısı</option>
+                            <option value="4">Yalnızca işçi payı</option>
+                        </select>
+                    </div>
+                    -->
+                    <div class="calculator-form-item-wrapper">
+                        <button id="buttonCalculate" type="button" class="btn btn-primary btn-lg calculator-form-item-button">Розрахувати</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="divResultContainer" class="result-container">
+            <div class="result-container-wrapper">
+                <div class="result-monthly-salary-copy">
+                    <h5>Aylık net maaşınız: <span id="spanResultMonthlySalaryCopy" class="result-monthly-salary-copy-amount"><b>€4.4040,23</b></span></h5>
+                </div>
+                <hr class="result-line-copy">
+                <h4>Деталі облікового запису:</h4>
+                <hr class="result-line">
+                <div class="callout success">
+                    <table class="steuerbescheid nostyle smallstack table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="" width="50%"></th>
+                                <th class="" width="25%">Щомісяця (€)</th>
+                                <th class="" width="25%">Щорічно (€)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class=""><b>Валова Заробітна плата:</b></td>
+                                <td class="">
+                                    <span class="result-table-data-period"></span>
+                                    <b id="resultGrossMonthlySalary"></b>
+                                </td>
+                                <td class=" ">
+                                    <span class="result-table-data-period"></span>
+                                    <b id="resultGrossYearlySalary"></b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="result-table-data-title" colspan="3"><b>Соціальні відрахування:</b></td>
+                            </tr>
+                            <tr>
+                                <td class=""> - Пенсійне страхування</td>
+                                <td id="resultMonthlyPension" class=" ">
+                                    <span class="result-table-data-period">Щомісяця</span>
+                                </td>
+                                <td id="resultYearlyPension" class=" ">
+                                    <span class="result-table-data-period">Щорічно</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class=""> - Страхування з безробіття</td>
+                                <td id="resultMonthlyUnemployment" class="">
+                                    <span class="result-table-data-period">Щомісяця</span>
+                                </td>
+                                <td id="resultYearlyUnemployment" class="">
+                                    <span class="result-table-data-period">Щорічно</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class=""> - Страхування догляду</td>
+                                <td id="resultMonthlyNursing" class="">
+                                    <span class="result-table-data-period">Щомісяця</span>
+                                </td>
+                                <td id="resultYearlyNursing" class=" ">
+                                    <span class="result-table-data-period">Щорічно</span>
+                                </td>
+                            </tr>
+                            <tr id="tr_krankenversicherung">
+                                <td class=""> - Медична страховка</td>
+                                <td id="resultMonthlyHealth" class=" ">
+                                    <span class="result-table-data-period">Щомісяця</span>
+                                </td>
+                                <td id="resultYearlyHealth" class=" ">
+                                    <span class="result-table-data-period">Щорічно</span>
+                                </td>
+                            </tr>
+                            <tr class="result-table-row-sum-line rechner_ergebniszeile">
+                                <td class=""><b>Загальний внесок на соціальне забезпечення:</b></td>
+                                <td class=" ">
+                                    <span class="result-table-data-period"></span>
+                                    <b id="resultMonthlyTotalSocial"></b>
+                                </td>
+                                <td class="">
+                                    <span class="result-table-data-period"></span>
+                                    <b id="resultYearlyTotalSocial"></b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="result-table-data-title" colspan="3"><b>Податки:</b></td>
+                            </tr>
+                            <tr>
+                                <td class=""> - Податок на прибуток</td>
+                                <td id="resultMonthlyIncomeTax" class="">
+                                    <span class="result-table-data-period">Щомісяця</span>
+                                </td>
+                                <td id="resultYearlyIncomeTax" class=" ">
+                                    <span class="result-table-data-period">Щорічно</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class=""> - Податок солідарності у Східній Німеччині</td>
+                                <td id="resultMonthlySolidarityTax" class=" ">
+                                    <span class="result-table-data-period">Щомісяця</span>
+                                </td>
+                                <td id="resultYearlySolidarityTax" class=" ">
+                                    <span class="result-table-data-period">Щорічно</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class=""> - Церковний податок</td>
+                                <td id="resultMonthlyChurchTax" class="">
+                                    <span class="result-table-data-period">Щомісяця</span>
+                                </td>
+                                <td id="resultYearlyChurchTax" class="">
+                                    <span class="result-table-data-period">Щорічно</span>
+                                </td>
+                            </tr>
+
+                            <tr id="tr_steuern" class="result-table-row-sum-line">
+                                <td class=""><b>Разом податки:</b></td>
+                                <td class="">
+                                    <span class="result-table-data-period"></span>
+                                    <b id="resultMonthlyTotalTax"></b>
+                                </td>
+                                <td class="">
+                                    <span class="result-table-data-period"></span>
+                                    <b id="resultYearlyTotalTax"></b>
+                                </td>
+                            </tr>
+
+                            <tr class="result-table-row-sum-line rechner_ergebniszeile">
+                                <td class="result-table-data-title"><b>Чиста зарплата:</b></td>
+                                <td class="">
+                                    <span class="result-table-data-period"></span>
+                                    <b id="resultMonthlyNetSalary"></b>
+                                </td>
+                                <td class="">
+                                    <span class="result-table-data-period"></span>
+                                    <b id="resultYearlyNetSalary"></b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="glossary-container">
+            <div id="divGlossaryWrapper" class="glossary-container-wrapper">
+                <div class="glossary-section">
+                    <h5>
+                        Головні
+                    </h5>
+                    <p>
+                      У Німеччині застосовується так звана "поступова система оподаткування". Іншими словами; низький дохід менше оподатковується і високий дохід більше оподатковується. Залежно від вашого доходу ви сплачуєте податки за ставками від 14% до 42%.
+                      Ви також звільняєтеся від прибуткового податку, якщо ваш дохід нижчий від цифр, зазначених у щорічній податковій пільзі.
+                    </p>
+                    <p>
+                        Нижче ви можете знайти детальну інформацію про податки та соціальні відрахування.
+                    </p>
+                </div>
+                <div class="glossary-section">
+                    <h5>
+                        Валова Заробітна плата
+                    </h5>
+                    <p>
+                        Заробітна плата у Німеччині заснована на валовій заробітній платі. Про валову заробітну плату можна сказати, що « це основний заробіток, на який заслуговує працівник».
+                    </p>
+                </div>
+
+                <div class="glossary-section hidden">
+                    <p>
+                        Валова заробітна плата, визначена без будь-яких відрахувань, може бути щомісячною або річною, тому вам слід вибрати правильний варіант у розділі «Звітний період».
+                    </p>
+                    <p>
+                        Відрахування від валової зарплати виробляються щомісяця. Юридичні відрахування, такі як прибутковий податок, пенсійне страхування, медичне страхування, церковний податок виплачуються з вашої валової заробітної плати. Сума, що залишилася, визначає вашу чисту зарплату і ці гроші фактично переводиться на ваш рахунок в кінці місяця.
+                        Ви можете побачити обидва значення у платіжній відомості.
+                    </p>
+                </div>
+
+                <div class="glossary-section hidden">
+                    <h5>
+                        Звітній рік
+                    </h5>
+                    <p>
+                        Важливо вибрати правильний рік оподаткування, оскільки передбачувані податки та збори змінюються щороку.
+                    </p>
+                </div>
+
+                <div class="glossary-section hidden">
+                    <h5>
+                        Щорічний Безподатковий Посібник
+                    </h5>
+                    <p>
+                        Базова допомога – це сума, з якої не стягується прибутковий податок. Щорічний неоподатковуваний посібник: встановлено у розмірі 9 984 євро для одиноких осіб та 19 968 євро для подружніх пар у 2022 році. У 2021 році для одиноких: 9744 євро, для подружніх пар 19488 євро.
+                    </p>
+                    <p>
+                        Якщо у вас є податкова пільга на додаток до суми, зазначеної вище, ви повинні вказати звільнену суму в розділі «Безплатна допомога».
+                    </p>
+                </div>
+
+                <div class="glossary-section hidden">
+                    <h5>
+                        Податковий клас
+                    </h5>
+                    <p>
+                        Ваш податковий клас визначає суму податку, яку ви сплачуєте, а також рівень вашого доходу. У Федеративній Республіці Німеччини є такі шість класів податку на заробітну плату (регульовані Законом про прибутковий податок):<br>
+                    </p>
+                    <p>
+                      <b>Податковий клас I:&emsp;</b> Застосовується до одиноких працівників, які не мають дітей, вдових або розлучених працівників Примітка: навіть якщо ви ще не розлучені і вже маєте два різні місця проживання, вам все одно потрібно перейти на I податковий клас.<br>
+                    </p>
+                    <p>
+                      <b>Податковий клас II:&emsp;</b>застосовується до одиноких працівників, які мають дітей, вдових або розлучених працівників.<br>
+                    </p>
+                    <p>
+                      <b>Податковий клас III:&emsp;</b>
+                        <b>Vergi sınıfı III:&emsp;</b>Може бути обраний однією людиною у шлюбі. Якщо можна вибрати дохід лише одного з подружжя. Якщо подружжя має дохід, тоді має сенс вибрати цей клас з вищим доходом одного з подружжя. Інший чоловік може обрати податковий клас V.<br>
+                    </p>
+                    <p>
+                      <b>Податковий клас IV:&emsp;</b>
+                        <b>Vergi sınıfı IV:&emsp;</b>Якщо чоловік/а не переходить на III і V класи самостійно, податковий клас IV присвоюється автоматично. Якщо подружжя має приблизно однакові прибутки, це вигідна податкова категорія.<br>
+                    </p>
+                    <p>
+                      <b>Податковий клас V:&emsp;</b>
+                        <b>Vergi sınıfı V:&emsp;</b>Еквівалентно прибутковому податку класу ІІІ. Його може вибрати одна людина у шлюбі. Для людини з (значно) нижчим доходом є сенс вибрати.<br>
+                    </p>
+                    <p>
+                      <b>Податковий клас VI:&emsp;</b>
+                        <b>Vergi sınıfı VI:&emsp;</b>Для співробітників, що працюють на двох і більше роботах. Друга робота (якщо вона перевищує ліміт у розмірі 450 євро) завжди оподатковується відповідно до класу прибуткового податку 6. Відрахування, як правило, високі у цьому податковому класі.<br>
+                    </p>
+                </div>
+
+                <div class="glossary-section hidden">
+                    <h5>
+                        Церковний податок
+                    </h5>
+                    <p>
+                        Церковний податок є цілком добровільним видом податку. Якщо ви хочете бути членом якоїсь церкви, брати участь у службах, організаціях або просто надавати фінансову підтримку, ви можете відзначити відповідний розділ щодо свого податкового класу.
+                    </p>
+                </div>
+
+                <div class="glossary-section hidden">
+                    <h5>
+                        Федеральні землі
+                    </h5>
+                    <p>
+                        Федеративна Республіка Німеччина складається з 16 різних земель. Кожен штат встановлює свої податки та збори. Будь ласка, оберіть свій штат проживання, щоб можна було точно розрахувати чисту заробітну плату.
+                    </p>
+                </div>
+
+                <div class="glossary-section hidden">
+                    <h5>
+                        Допомога дітям
+                    </h5>
+                    <p>
+                        Працівники, які мають дітей, можуть отримувати допомогу на дитину. Це зменшує податок і збільшує вашу чисту заробітну плату. Як правило, обидва батьки мають право отримувати допомогу на дитину, але вона також може бути передана одному з батьків.
+                    </p>
+                    <p>
+                      Якщо 2021 року зниження податку дітей склало <b>8 388</b> євро, то 2020 року воно становило <b>7 812</b> євро.
+                    </p>
+                </div>
+
+                <div class="glossary-section hidden">
+                    <h5>
+                        Медична страховка
+                    </h5>
+                    <p>
+                        Ваше медичне страхування відіграє важливу роль у розрахунку чистої заробітної плати. Для обов'язкового медичного страхування встановлюється фіксований відсоток, який віднімається безпосередньо з чистої заробітної плати.
+                        З іншого боку, якщо ви застраховані приватно, страховий внесок не буде безпосередньо вираховуватися з вашої чистої заробітної плати. Ви сплачуєте свій внесок пізніше, коли отримаєте свою чисту заробітну плату. Якщо ви маєте приватну страховку, введіть суму у розділі «Щомісячна Премія».
+                    </p>
+                </div>
+
+                <div class="glossary-section hidden">
+                    <h5>
+                        Соціальні відрахування
+                    </h5>
+                    <p>
+                      <b>Страховка з безробіття:&emsp;</b>Кожен працівник повинен сплачувати страховку з безробіття у розмірі 2,4%.
+                    </p>
+                    <p>
+                      <b>Страхування на випадок тривалого догляду:</b>Кожен працівник повинен сплачувати 3,05% страхування на випадок тривалого догляду. Ця страховка захищає співробітників від таких умов, як старість та хвороби.
+                    </p>
+                    <p>
+                      <b>Обов'язкове медичне страхування:</b> Як зазначено в розділі про медичне страхування, кожен працівник оплачує 14,6% медичного страхування.
+                    </p>
+                    <p>
+                      <b>Пенсійне страхування:</b> Станом на 1 січня 2020 року ставка внесків обов'язкового пенсійного страхування становить 18,6%, половина виплачується працівником, а половина - роботодавцем.
+                    </p>
+                </div>
+
+                <div class="glossary-section hidden">
+                    <h5>
+                        Податок Солідарності
+                    </h5>
+                    <p>
+                        Німецький податок на солідарність — це податок, який набув чинності у 1991 році та був створений для сприяння розвитку колишньої Східної Німеччини.
+                    </p>
+                    <p>
+                        Усі платники податків сплачують 5,5% від відповідних ставок прибуткового податку як податок на солідарність. Наприклад, якщо ваша ставка прибуткового податку становить 30% – податок на солідарність становить 5,5% від 30%, що становить 1,65% від вашого доходу.
+                        Самотні особи з річним доходом менше <b>9 984 євро</b> та пари з доходом менше <b>19 968</b> євро, що проживають разом, не сплачують цей податок.
+                    </p>
+
+                </div>
+
+                <div class="glossary-section hidden">
+                    <h5>
+                        Нетто (зарплата з урахуванням вирахування всіх податків)
+                    </h5>
+                    <p>
+                        За допомогою "Калькулятор зарплат у Німеччині" ваша валова заробітна плата розраховується шляхом відрахування всіх податків та відрахувань на соціальне забезпечення з вашої валової заробітної плати. З "Калькулятор зарплат у Німеччині" ви можете легко розрахувати свою зарплату в Німеччині та побачити деталі. Ви можете розрахувати свій прибутковий податок, внески на соціальне страхування та чисту заробітну плату заднім числом за 2021 рік.
+                    </p>
+                </div>
+            </div>
+            <div id="divReadMoreLink" class="read-more-link">
+                Показати більше
+            </div>
+        </div>
+    </main>
+
+        <footer>
+            <section class="">
+                <ul class="footer-list">
+                    <li class="last-order">
+                        <span id="yearP">
+                            <script>
+                                document.getElementById("yearP").appendChild(document.createTextNode(new Date().getFullYear()));
+                            </script>
+                        </span>
+                    </li>
+                    <li class="footer-list-item push-left"><a href="./pages/about.html">Про мене</a></li>
+                    <li class="footer-list-item footer-link"><a href="./pages/privacy.html">Політика конфіденційності</a></li>
+                    <li class="footer-list-item footer-link"><a href="./pages/termsofuse.html">Умови використання</a></li>
+                </ul>
+            </section>
+        </footer>
+
+        <div id="cookie-banner" class="cookie-container">
+            <div class="cookie">
+                <div class="cookie-text">Файли cookie використовуються виключно для статистичних цілей на нашому сайті, ви можете знайти додаткову інформацію на нашій сторінці конфіденційності.</div>
+                <div id="cookie-close" class="cookie-button">X</div>
+            </div>
+        </div>
+
+        <script src="js/calc.min.js"></script>
+        <script src="js/validate.min.js"></script>
+        <script src="js/cookie.min.js"></script>
+        <script src="js/readmore.min.js"></script>
+        <script src="js/tooltip.min.js"></script>
+    </body>
+</html>
