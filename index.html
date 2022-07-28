@@ -70,7 +70,7 @@
                     <div class="calculator-form-item-wrapper formbuilder-text form-group">
                         <div class="tooltip-line"><label id="labelSalary" for="inputSalary" class="calculator-form-item-label form-label formbuilder-text-label">Валова Заробітна плата (€)</label> <i id="iconSalary" class="bi bi-info-circle tooltip-line-icon"></i></div>
                         <input id="inputSalary" class="form-control calculator-form-item-text" inputmode="numeric" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" min="1" max="1000000000">
-                        <small class="calculator-form-item-invalid-text" id="textSalaryInvalid">Lütfen geçerli bir brüt maaş giriniz.</small>
+                        <small class="calculator-form-item-invalid-text" id="textSalaryInvalid">Введіть дійсну валову зарплату.</small>
 
                     </div>
 
@@ -111,7 +111,7 @@
                     <div class="calculator-form-item-wrapper formbuilder-text form-group">
                         <div class="tooltip-line"><label id="labelTaxFree" for="inputTaxFree" class="calculator-form-item-label form-label">Безподатковий Посібник (€)</label><i id="iconTaxFree" class="bi bi-info-circle tooltip-line-icon"></i></div>
                         <input id="inputTaxFree" inputmode="numeric" type="number" value="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control calculator-form-item-text">
-                        <small class="calculator-form-item-invalid-text" id="textTaxFreeInvalid">Lütfen geçerli ödenek değeri giriniz. Eğer vergisiz ödeneğiniz yok ise 0 girebilirsiniz.</small>
+                        <small class="calculator-form-item-invalid-text" id="textTaxFreeInvalid">Введіть поточне значення надбавки. Якщо у вас немає податкової допомоги, ви можете ввести 0.</small>
                     </div>
                     <div class="calculator-form-item-wrapper fcalculator-form-item-wrapper form-group">
                         <div class="tooltip-line"><label for="selectTaxClass" class="calculator-form-item-label form-label formbuilder-select-label">Податковий клас</label><i id="iconTaxClass" class="bi bi-info-circle tooltip-line-icon"></i></div>
@@ -208,13 +208,13 @@
                     <div id="divHealthInsuranceRate" class="calculator-form-item-wrapper form-group">
                         <div class="tooltip-line"><label id="labelHealthInsuranceRate" for="inputHealthInsuranceRate" class="calculator-form-item-label form-label formbuilder-text-label">Внесок на медичне страхування (%)</label><i id="iconHealthInsuranceRate" class="bi bi-info-circle tooltip-line-icon"></i></div>
                         <input id="inputHealthInsuranceRate" inputmode="decimal" type="number" value="14.6" class="form-text form-control calculator-form-item-text-percent" step=".01">
-                        <small id="textHealthInsuranceRateInvalid" class="calculator-form-item-invalid-text">Katkı payı minumum %14,6, maksimum %18 olmalıdır. Lütfen geçerli bir değer giriniz.</small>
+                        <small id="textHealthInsuranceRateInvalid" class="calculator-form-item-invalid-text">Вклад повинен становити мінімум 14,6 %і максимум 18 %. Введіть дійсне значення.</small>
                     </div>
 
                     <div id="divHealthInsuranceMonthlyFee" class="calculator-form-item-wrapper form-group hidden">
                         <div class="tooltip-line"><label id="labelHealthInsuranceMonthlyFee" for="inputHealthInsuranceMonthlyFee" class="calculator-form-item-label form-label formbuilder-text-label">Aylık Prim (€)</label><i id="iconHealthInsuranceMonthlyFee" class="bi bi-info-circle tooltip-line-icon"></i></div>
                         <input id="inputHealthInsuranceMonthlyFee" inputmode="numeric" type="number" value="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-text form-control calculator-form-item-text">
-                        <small id="textHealthInsuranceMonthlyFeeInvalid" class="calculator-form-item-invalid-text">Aylık prim minumum 2€, maksimum 100000€ olmalıdır. Lütfen geçerli bir değer giriniz.</small>
+                        <small id="textHealthInsuranceMonthlyFeeInvalid" class="calculator-form-item-invalid-text">Щомісячна премія повинна становити мінімум 2 євро і максимум 100000 €. Введіть дійсне значення.</small>
                     </div>
                     <!--
                     <div class="calculator-form-item-wrapper">
